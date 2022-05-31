@@ -1,0 +1,27 @@
+import { useParams } from "react-router";
+
+const GalleryView = function(props) {
+    let { galleryId } = useParams();
+    // let params = useParams();
+    // console.log(galleryId)
+    // console.log(props.galleries)
+
+    let gallery 
+    
+    props.galleries.forEach(gal => {
+        if (gal.gallerynumber === galleryId) {
+            // debugger
+            gallery = gal;
+        }
+    })
+
+    // console.log(gallery)
+    return (
+        <div>
+            <h1>Hello From the GalleryView</h1>
+            <h2>{gallery.name}</h2>
+        </div>
+    )
+}
+
+export default GalleryView;
